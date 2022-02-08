@@ -1,0 +1,29 @@
+from flask import  Flask, render_template, url_for
+
+app = Flask(__name__, static_url_path='/static')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/menu')
+def menu():
+    return render_template('menu.html')
+
+@app.route('/reservation')
+def reservation():
+    return render_template('reservation.html')
+
+@app.route('/special-dishes')
+def special_dishes():
+    return render_template('special-dishes.html')
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
+
+app.run(debug=True)
